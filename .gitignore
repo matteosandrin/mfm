@@ -1,5 +1,7 @@
 *.json
 *.xml
+*.tar
+.DS_Store
 out/
 episodes/
 secrets/

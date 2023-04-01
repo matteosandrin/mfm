@@ -48,8 +48,10 @@ for i, ep in enumerate(episodes):
     os.system('wget "{}" -nv -O {}.mp3'.format(ep['audio_url'], filename))
 
     print("[+] Converting episode {}".format(i+1))
-    os.system('ffmpeg -i {}.mp3 -acodec pcm_s16le -ac 1 -ar 16000 -y -hide_banner -loglevel error {}.wav'.format(
-        filename, filename))
+    os.system(
+        'ffmpeg -i {}.mp3 ' +
+        '-acodec pcm_s16le -ac 1 -ar 16000 -y -hide_banner -loglevel error ' +
+        '{}.wav'.format(filename, filename))
 
     print("[+] Analyzing episode {}".format(i+1))
 
